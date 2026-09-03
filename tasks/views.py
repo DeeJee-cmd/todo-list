@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views import generic, View
@@ -6,7 +7,7 @@ from .forms import TaskForm, TagForm
 from .models import Task, Tag
 
 
-class TaskListView(generic.ListView):
+class TaskListView(LoginRequiredMixin, generic.ListView):
     model = Task
     template_name = "tasks/task_list.html"
     context_object_name = "task_list"
@@ -18,48 +19,48 @@ class TaskListView(generic.ListView):
         )
 
 
-class TaskCreateView(generic.CreateView):
+class TaskCreateView(LoginRequiredMixin, generic.CreateView):
     model = Task
     form_class = TaskForm
     success_url = reverse_lazy("tasks:task-list")
     template_name = "tasks/task_form.html"
 
 
-class TaskUpdateView(generic.UpdateView):
+class TaskUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Task
     form_class = TaskForm
     success_url = reverse_lazy("tasks:task-list")
     template_name = "tasks/task_form.html"
 
 
-class TaskDeleteView(generic.DeleteView):
+class TaskDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Task
     success_url = reverse_lazy("tasks:task-list")
     template_name = "tasks/task_confirm_delete.html"
 
 
-class TagListView(generic.ListView):
+class TagListView(LoginRequiredMixin, generic.ListView):
     model = Tag
     template_name = "tasks/tag_list.html"
     context_object_name = "tag_list"
     queryset = Tag.objects.all().order_by("name")
 
 
-class TagCreateView(generic.CreateView):
+class TagCreateView(LoginRequiredMixin, generic.CreateView):
     model = Tag
     form_class = TagForm
     success_url = reverse_lazy("tasks:tag-list")
     template_name = "tasks/tag_form.html"
 
 
-class TagUpdateView(generic.UpdateView):
+class TagUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Tag
     form_class = TagForm
     success_url = reverse_lazy("tasks:tag-list")
     template_name = "tasks/tag_form.html"
 
 
-class TagDeleteView(generic.DeleteView):
+class TagDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Tag
     success_url = reverse_lazy("tasks:tag-list")
     template_name = "tasks/tag_confirm_delete.html"

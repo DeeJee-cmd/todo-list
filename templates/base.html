@@ -22,6 +22,19 @@
           <a href="{% url 'tasks:tag-list' %}" class="nav-link link-dark">Tag list page</a>
         </li>
       </ul>
+      <div class="mt-auto pt-3 border-top">
+    {% if user.is_authenticated %}
+        <div class="mb-2 text-muted small">
+            Logged in as: <strong>{{ user.username }}</strong>
+        </div>
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-sm btn-outline-danger w-100">Logout</button>
+        </form>
+    {% else %}
+        <a href="{% url 'login' %}" class="btn btn-sm btn-primary w-100">Login</a>
+    {% endif %}
+</div>
     </nav>
 
     <!-- Main Content -->

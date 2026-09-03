@@ -43,8 +43,17 @@
 
             <!-- Tags -->
             <div class="mb-4">
-              <label for="{{ form.tags.id_for_label }}" class="form-label fw-semibold">Tags</label>
-              {{ form.tags }}
+              <label class="form-label fw-semibold d-block">Tags</label>
+              <div class="d-flex flex-wrap gap-2">
+                {% for checkbox in form.tags %}
+                  <div class="tag-checkbox">
+                    {{ checkbox.tag }}
+                    <label for="{{ checkbox.id_for_label }}" class="btn btn-outline-primary btn-sm rounded-pill">
+                      {{ checkbox.choice_label }}
+                    </label>
+                  </div>
+                {% endfor %}
+              </div>
               {% if form.tags.errors %}
                 <div class="text-danger small mt-1">{{ form.tags.errors|first }}</div>
               {% endif %}

@@ -25,7 +25,7 @@ class TaskForm(forms.ModelForm):
                 attrs={"class": "form-check-input"}
             ),
             "tags": forms.CheckboxSelectMultiple(
-                attrs={"class": "form-check-input"}
+                attrs={"class": "btn-check"}
             ),
         }
 

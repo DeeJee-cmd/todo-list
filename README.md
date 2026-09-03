@@ -55,5 +55,14 @@ python manage.py test tasks
 ![task.png](doc%2Ftask.png)
 
 ![tag.png](doc%2Ftag.png)
+---
 
+### Future Improvements & Roadmap
+
+* **Database Migration:** Switch from SQLite to PostgreSQL for production environments.
+* **Pagination & Filtering:** Implement pagination for task/tag lists and add dynamic filtering by completion status (`is_done`), tags, and deadlines.
+* **REST API:** Introduce RESTful API endpoints using Django REST Framework for SPA or mobile app integration.
+* **Background Tasks (Celery + Redis):** Set up asynchronous email notifications for upcoming deadlines.
+* **Dynamic UI (HTMX):** Enable task status toggling and tag deletions without full page reloads.
+* **CI/CD Pipeline:** Configure GitHub Actions for automated `flake8` linting and test suite execution on pull requests to `main`.
 

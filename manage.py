@@ -6,11 +6,11 @@ import sys
 
 from dotenv import load_dotenv
 
-load_dotenv()
-
 
 def main():
     """Run administrative tasks."""
+    load_dotenv()
+
     os.getenv("DJANGO_SETTINGS_MODULE", "config.settings.base")
     try:
         from django.core.management import execute_from_command_line

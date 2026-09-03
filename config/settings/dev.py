@@ -1,4 +1,4 @@
-from base import *
+from .base import *
 
 
 # Quick-start development settings - unsuitable for production
@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "tasks"
 ]
 
 MIDDLEWARE = [

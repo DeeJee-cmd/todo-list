@@ -24,7 +24,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "todo_list_config.urls"
+ROOT_URLCONF = "config.urls"
 
 TEMPLATES = [
     {
@@ -41,7 +41,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "todo_list_config.wsgi.application"
+WSGI_APPLICATION = "config.wsgi.application"
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators

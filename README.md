@@ -64,5 +64,3 @@ python manage.py test tasks
 * **REST API:** Introduce RESTful API endpoints using Django REST Framework for SPA or mobile app integration.
 * **Background Tasks (Celery + Redis):** Set up asynchronous email notifications for upcoming deadlines.
 * **Dynamic UI (HTMX):** Enable task status toggling and tag deletions without full page reloads.
-* **CI/CD Pipeline:** Configure GitHub Actions for automated `flake8` linting and test suite execution on pull requests to `main`.
-

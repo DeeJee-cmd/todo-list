@@ -3,8 +3,8 @@ from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views import generic, View
 
-from .forms import TaskForm, TagForm
-from .models import Task, Tag
+from tasks.forms import TaskForm, TagForm
+from tasks.models import Task, Tag
 
 
 class TaskListView(LoginRequiredMixin, generic.ListView):

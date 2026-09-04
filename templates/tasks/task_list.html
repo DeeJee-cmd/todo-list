@@ -38,12 +38,12 @@
               <form action="{% url 'tasks:task-toggle' task.id %}" method="post" class="m-0">
                 {% csrf_token %}
                 {% if task.is_done %}
-                  <button type="submit" class="btn btn-sm btn-success">
-                    <i class="bi bi-check-circle-fill me-1"></i> Done
+                  <button type="submit" class="btn btn-sm btn-outline-secondary">
+                    <i class="bi bi-arrow-counterclockwise me-1"></i> Undo
                   </button>
                 {% else %}
-                  <button type="submit" class="btn btn-sm btn-outline-secondary">
-                    <i class="bi bi-circle me-1"></i> In progress
+                  <button type="submit" class="btn btn-sm btn-success">
+                    <i class="bi bi-check-circle me-1"></i> Complete
                   </button>
                 {% endif %}
               </form>

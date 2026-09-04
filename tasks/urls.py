@@ -23,9 +23,6 @@ urlpatterns = [
     path(
         "<int:pk>/toggle/", TaskToggleStatusView.as_view(), name="task-toggle"
     ),
-    path(
-        "<int:pk>/toggle/", TaskToggleStatusView.as_view(), name="task-toggle"
-    ),
     # Tags
     path("tags/", TagListView.as_view(), name="tag-list"),
     path("tags/create/", TagCreateView.as_view(), name="tag-create"),
